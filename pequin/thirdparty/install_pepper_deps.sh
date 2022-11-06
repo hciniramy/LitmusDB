@@ -11,7 +11,7 @@ TAR="tar xvzf"
 
 # papi
 echo "installing PAPI"
-# $TAR papi-5.4.1.tar.gz
+$TAR papi-5.4.1.tar.gz
 cd papi-5.4.1/src
 ./configure --prefix=$DEPS_DIR
 make
@@ -20,7 +20,7 @@ cd $UP
 
 # libconfig
 echo "installing libconfig"
-# $TAR libconfig-1.4.8.tar.gz
+$TAR libconfig-1.4.8.tar.gz
 cd libconfig-1.4.8
 ./configure --prefix=$DEPS_DIR
 make
@@ -65,7 +65,8 @@ cd libsnark
 # git checkout dc78fdae02b437bb6c838a82f9261c49bbd7723e
 # git submodule init && git submodule update
 # git apply libsnark_compilerflag.patch
-mkdir build && cd build
+# mkdir build &&
+cd build
 cmake -DCMAKE_INSTALL_PREFIX=$DEPS_DIR -DWITH_PROCPS=OFF ..
 DESTDIR=$DEPS_DIR make install
 cd $UP
