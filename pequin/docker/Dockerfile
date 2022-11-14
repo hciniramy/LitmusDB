@@ -23,8 +23,8 @@ COPY dbx1000_logging/ $LITMUS
 
 COPY pequin/ $PEQUIN
 RUN cd $PEQUIN/thirdparty && ./install_pepper_deps.sh \
-    && cd $PEQUIN && ./install_buffet.sh \
-    && mv $PEQUIN/thirdparty/libsnark /tmp && rm -rf $PEQUIN/thirdparty/* \
+RUN cd $PEQUIN && ./install_buffet.sh \
+RUN mv $PEQUIN/thirdparty/libsnark /tmp && rm -rf $PEQUIN/thirdparty/* \
     && mv /tmp/libsnark $PEQUIN/thirdparty/ \
     && rm -rf $PEQUIN/compiler/buffetfsm/llvm $PEQUIN/compiler/buffetfsm/llvm-build \
 
