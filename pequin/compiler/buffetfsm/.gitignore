@@ -1,9 +1,0 @@
-buffetfsm
-*.o
-*.o.d
-*.gch
-*.gch.d
-core
-toolchain/
-llvm-build/
-llvm/
