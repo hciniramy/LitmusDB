@@ -37,7 +37,7 @@ GLOBAL_DIR = ''
 def getResDir(modification):
     if GLOBAL_DIR:
         return GLOBAL_DIR
-    label = subprocess.check_output(["git", "describe", "--tags"]).strip()
+    label = subprocess.check_output(["git", "describe", "--tags", "--always"]).strip()
     res = './results/' + modification + label.decode('ascii')
     if not os.path.exists(res):
         os.makedirs(res)
