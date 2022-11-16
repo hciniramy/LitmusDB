@@ -1,5 +1,6 @@
 ![LitmusDB](https://litmusdb.com/assets/img/litmusdb.png)
 
+
 # LitmusDB Prototype Build
 [[:globe_with_meridians: Website]](https://litmusdb.com/) [[:memo: Paper]](https://dl.acm.org/doi/10.1145/3514221.3517851) [[:book: Extended Version]](https://yxia.me/assets/thesis.pdf) [[:tv: Video]](https://youtu.be/gMKxLbDYhTU)
 
@@ -25,10 +26,18 @@ Please do not hesitate fo submit an issue or contact us directly if you found an
 
 1. Navigate into pequin/ and follow the instruction in GETTING_STARTED.md and INSTALLING.md. Make sure you can successfully prove the examples shipped with Pequin.
 2. Navigate into dbx1000/ and run install_deps.sh
-3. Run `python3 tools/compile.py`
-4. Create the `logs` and `results` folder.
+3. Run `export LD_LIBRARY_PATH=/usr/lib/jvm/adoptopenjdk-14-hotspot-amd64/lib/server/`
+4. Run `python3 tools/compile.py`. As an alternative use the following command to compile a certain variant: `python3 tools/compile.py serial YCSB NO_WAIT LOG_DATA RSA_AD false`
+5. Create the `logs` and `results` folder.
 
 You should now see a number of executables whose names start with `rundb`. They represent the baselines.
+
+## Usage with docker
+1. Run the `build_docker.sh` script (this will create the pequin base docker image if required and the litmusdb docker image)
+2. Navigate into `dbx1000_logging` and create the tmpfs filesystem: `cd ../dbx1000_logging && mkdir logs && sudo mount -t tmpfs -o rw,size=30G tmpfs ./logs`
+3. create a new docker container using the following command: `docker run --privileged -h litmus_dev -it -v $HOME/LitmusDB/dbx1000_logging/logs/:/root/LitmusDB/dbx1000_logging/logs litmusdb bash`
+
+(`privileged` mode is required since the script flushes OS caches and for numactl, `-h litmus_dev` is required since the `runExpr.py` script selects the OS cache flush method based on the hostname) 
 
 ## How to Use
 
