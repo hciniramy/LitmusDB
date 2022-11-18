@@ -28,6 +28,7 @@ jobs:
 
       - name: Build image
         run: |
+          git submodule update --init
           # build pequin image if it does not exists
           if [[ "$(docker images -q pequin:latest 2> /dev/null)" == "" ]]; then
             echo "[Script-INFO] Pequin docker image does not exists, building it"
