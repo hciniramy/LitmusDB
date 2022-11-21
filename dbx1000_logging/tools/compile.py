@@ -136,7 +136,9 @@ else:
         # upper bound
         insert_his('serial', bench, 'NO_WAIT', 'LOG_DATA', verification='false')
         insert_his('serial', bench, 'DETRESERVE', 'LOG_DATA', verification='false')
-        
+        insert_his('serial', bench, 'NO_WAIT', 'LOG_DATA', verification='false', elle='true')
+        insert_his('serial', bench, 'DETRESERVE', 'LOG_DATA', verification='false', elle='true')
+
        
 
 for (jobname, v) in jobs.items():
