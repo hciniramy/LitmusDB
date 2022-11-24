@@ -1,11 +1,17 @@
 FROM pequin:latest
 
-# LitmusDB build arguments defied in dockerfile
+# LitmusDB build arguments defined in dockerfile
+    # $1
 ARG BUILD_REF="main"
+    # $2
 ARG BUILD_ALG="serial"
+    # $3
 ARG BUILD_CC_ALG="NO_WAIT"
+    # $4
 ARG BUILD_MEM_INTEGRITY="RSA_AD"
+    # $5
 ARG BUILD_VERIFICATION="false"
+    # $6
 ARG BUILD_ELLE_OUTPUT="false"
 
 # avoid annoying debconf output

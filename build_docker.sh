@@ -13,5 +13,12 @@ else
 fi
 
 echo "[Script-INFO] Building litmus docker image"
-docker build -t litmusdb -f docker/Dockerfile .
+docker build -t litmusdb_dev  \
+  -build-arg BUILD_REF=$1 \
+  -build-arg BUILD_ALG=$2 \
+  -build-arg BUILD_CC_ALG=$3 \
+  -build-arg BUILD_MEM_INTEGRITY=$4 \
+  -build-arg BUILD_VERIFICATION=$5 \
+  -build-arg BUILD_ELLE_OUTPUT=$6 \
+  -f docker/Dockerfile .
 
