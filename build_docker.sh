@@ -13,7 +13,7 @@ else
 fi
 
 echo "[Script-INFO] Building litmus docker image"
-docker build -t litmusdb_dev  \
+docker build -t $7  \
   -build-arg BUILD_REF=$1 \
   -build-arg BUILD_ALG=$2 \
   -build-arg BUILD_CC_ALG=$3 \
