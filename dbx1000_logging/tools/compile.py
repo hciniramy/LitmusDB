@@ -134,10 +134,8 @@ else:
         insert_his('serial', bench, 'INTERACT1ms', 'LOG_DATA', 'MERKLE_TREE')
 
         # upper bound
-        # insert_his('serial', bench, 'NO_WAIT', 'LOG_DATA', verification='false')
-        # insert_his('serial', bench, 'DETRESERVE', 'LOG_DATA', verification='false')
-        insert_his('serial', bench, 'NO_WAIT', 'LOG_DATA', verification='false', elle='true')
-        insert_his('serial', bench, 'DETRESERVE', 'LOG_DATA', verification='false', elle='true')
+        insert_his('serial', bench, 'NO_WAIT', 'LOG_DATA', verification='false')
+        insert_his('serial', bench, 'DETRESERVE', 'LOG_DATA', verification='false')
 
        
 
