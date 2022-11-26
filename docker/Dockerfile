@@ -28,7 +28,7 @@ ENV LD_LIBRARY_PATH /usr/lib/jvm/adoptopenjdk-14-hotspot-amd64/lib/server
 COPY . $LITMUSDB
 
 # checkout to  the required build version (see tags)
-RUN cd $LITMUSDB && git checkout $BUILD_REF
+RUN cd $LITMUSDB # && git checkout $BUILD_REF
 
 # install dependencies
 RUN $LITMUSDB/dbx1000_logging/install_deps.sh
