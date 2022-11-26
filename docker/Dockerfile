@@ -8,10 +8,12 @@ ARG BUILD_ALG="serial"
     # $3
 ARG BUILD_CC_ALG="NO_WAIT"
     # $4
+ARG BUILD_WORKLOAD="TPCC"
+    # 5
 ARG BUILD_MEM_INTEGRITY="RSA_AD"
-    # $5
-ARG BUILD_VERIFICATION="false"
     # $6
+ARG BUILD_VERIFICATION="false"
+    # $7
 ARG BUILD_ELLE_OUTPUT="false"
 
 # avoid annoying debconf output
@@ -34,6 +36,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends --force-yes vim
 RUN mkdir -p $LITMUSDB/pequin/thirdparty && cp -r /opt/pequin/thirdparty/libsnark $LITMUSDB/pequin/thirdparty/
 
 # build LitmusDB
-RUN cd $LITMUSDB/dbx1000_logging && python3 tools/compile.py $BUILD_ALG $BUILD_WORKlOAD $BUILD_CC_ALG LOG_DATA $BUILD_MEM_ITEGRITY $BUILD_VERIFICATION $BUILD_ELLE_OUTPUT
+RUN cd $LITMUSDB/dbx1000_logging && python3 tools/compile.py $BUILD_ALG $BUILD_WORKLOAD $BUILD_CC_ALG LOG_DATA $BUILD_MEM_ITEGRITY $BUILD_VERIFICATION $BUILD_ELLE_OUTPUT
 RUN cd $LITMUSDB/dbx1000_logging && mkdir logs results
   
