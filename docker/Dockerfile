@@ -36,7 +36,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends --force-yes vim
 RUN mkdir -p $LITMUSDB/pequin/thirdparty && cp -r /opt/pequin/thirdparty/libsnark $LITMUSDB/pequin/thirdparty/
 
 # build LitmusDB
-RUN echo "python3 tools/compile.py $BUILD_ALG $BUILD_WORKLOAD $BUILD_CC_ALG LOG_DATA $BUILD_MEM_ITEGRITY $BUILD_VERIFICATION $BUILD_ELLE_OUTPUT"
-RUN cd $LITMUSDB/dbx1000_logging && python3 tools/compile.py $BUILD_ALG $BUILD_WORKLOAD $BUILD_CC_ALG LOG_DATA $BUILD_MEM_ITEGRITY $BUILD_VERIFICATION $BUILD_ELLE_OUTPUT
+RUN cd $LITMUSDB/dbx1000_logging && python3 tools/compile.py $BUILD_ALG $BUILD_WORKLOAD $BUILD_CC_ALG LOG_DATA $BUILD_MEM_INTEGRITY $BUILD_VERIFICATION $BUILD_ELLE_OUTPUT
 RUN cd $LITMUSDB/dbx1000_logging && mkdir logs results
   
