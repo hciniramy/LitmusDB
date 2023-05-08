@@ -1,4 +1,4 @@
-FROM pequin:latest
+FROM pequin_jessie:latest
 
 # LitmusDB build arguments defined in dockerfile
     # $1

@@ -3,7 +3,7 @@
 set -e
  
 # build pequin image if it does not exists
-if [[ "$(docker images -q pequin:latest 2> /dev/null)" == "" ]]; then
+if [[ "$(docker images -q pequin_jessie:latest 2> /dev/null)" == "" ]]; then
   echo "[Script-INFO] Pequin docker image does not exists, building it"
   cd pequin
   ./build_docker.sh
