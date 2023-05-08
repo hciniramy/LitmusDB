@@ -288,8 +288,8 @@ extern TestCases					g_test_case;
 
 #define VERIFICATION false
 #define SKIP_MAT_GEN false
-#define OUTPUT_SOURCE true
-#define OUTPUT_CIRCUIT true
+#define OUTPUT_SOURCE false
+#define OUTPUT_CIRCUIT false
 #define CLIENT_INTERACT false
 #define SIM_NET_LATENCY 100 // in ms
 #define PROVER_THREADS 1
