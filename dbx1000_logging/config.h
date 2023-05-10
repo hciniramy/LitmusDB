@@ -286,13 +286,13 @@ extern TestCases					g_test_case;
 // LITMUS
 /************************************/
 
-#define VERIFICATION false
+#define VERIFICATION true
 #define SKIP_MAT_GEN false
 #define OUTPUT_SOURCE false
 #define OUTPUT_CIRCUIT false
 #define CLIENT_INTERACT false
 #define SIM_NET_LATENCY 100 // in ms
-#define PROVER_THREADS 1
+#define PROVER_THREADS 75
 
 #define RSA_AD 0
 #define MERKLE_TREE 1
